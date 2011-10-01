@@ -5,10 +5,6 @@ function [EEG,ref,latency,snr] = generate_synth(EEG,options)
 %   Created by Alexandre Gramfort on 2009-05-10.
 %   Copyright (c)  Alexandre Gramfort. All rights reserved.
 
-% $Id: generate_synth.m 2 2009-06-16 19:24:10Z gramfort $
-% $LastChangedBy: gramfort $
-% $LastChangedDate: 2009-06-16 15:24:10 -0400 (Mar, 16 jui 2009) $
-% $Revision: 2 $
 
 if nargin<2
     options.null = 0;

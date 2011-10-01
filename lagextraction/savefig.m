@@ -5,10 +5,6 @@ function [] = savefig(image_name,font_size,formats)
 %   Created by Alexandre Gramfort on 2008-11-11.
 %   Copyright (c) 2007 Alexandre Gramfort. All rights reserved.
 
-% $Id: savefig.m 4 2009-08-15 21:10:35Z gramfort $
-% $LastChangedBy: gramfort $
-% $LastChangedDate: 2009-08-15 17:10:35 -0400 (Sam, 15 aoû 2009) $
-% $Revision: 4 $
 
 % hack
 return

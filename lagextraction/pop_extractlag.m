@@ -39,10 +39,6 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA    02111-1307    USA
 
-% $Id: pop_extractlag.m 4 2009-08-15 21:10:35Z gramfort $
-% $LastChangedBy: gramfort $
-% $LastChangedDate: 2009-08-15 17:10:35 -0400 (Sam, 15 aoû 2009) $
-% $Revision: 4 $
 
 function [EEG, com, order, lags_ms, event_type, E_lags] = pop_extractlag( EEG, use_ica, channel_id, time_win, options )
 

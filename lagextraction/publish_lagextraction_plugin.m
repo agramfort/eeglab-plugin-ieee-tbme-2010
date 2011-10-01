@@ -1,7 +1,3 @@
-% $Id: publish_lagextraction_plugin.m 4 2009-08-15 21:10:35Z gramfort $
-% $LastChangedBy: gramfort $
-% $LastChangedDate: 2009-08-15 17:10:35 -0400 (Sam, 15 aoû 2009) $
-% $Revision: 4 $
 
 clear
 opts.stylesheet = 'doc/agramfort.xsl';

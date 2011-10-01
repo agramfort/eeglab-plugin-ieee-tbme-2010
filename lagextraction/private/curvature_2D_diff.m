@@ -5,10 +5,6 @@ function K = curvature_2D_diff(x,y)
 %   Created by Alexandre Gramfort on 2008-12-16.
 %   Copyright (c) 2007 Alexandre Gramfort. All rights reserved.
 
-% $Id: curvature_2D_diff.m 2 2009-06-16 19:24:10Z gramfort $
-% $LastChangedBy: gramfort $
-% $LastChangedDate: 2009-06-16 15:24:10 -0400 (Mar, 16 jui 2009) $
-% $Revision: 2 $
 
 % Smooth x and y with fix borders
 niter = 5;

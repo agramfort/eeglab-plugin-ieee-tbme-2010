@@ -4,10 +4,6 @@ function h = smart_figure(name)
 %   It returns a new figure when no figure with that name exists
 %   
 
-% $Id: smart_figure.m 2 2009-06-16 19:24:10Z gramfort $
-% $LastChangedBy: gramfort $
-% $LastChangedDate: 2009-06-16 15:24:10 -0400 (Mar, 16 jui 2009) $
-% $Revision: 2 $
 
 hw = get(0,'children');
 hw = sort(hw);

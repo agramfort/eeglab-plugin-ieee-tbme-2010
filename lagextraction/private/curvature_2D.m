@@ -11,10 +11,6 @@ function K = curvature_2D(X,Y,degree)
 %   Copyright (c) 2007 Alexandre Gramfort. All rights reserved.
 %
 
-% $Id: curvature_2D.m 2 2009-06-16 19:24:10Z gramfort $
-% $LastChangedBy: gramfort $
-% $LastChangedDate: 2009-06-16 15:24:10 -0400 (Mar, 16 jui 2009) $
-% $Revision: 2 $
 
 if nargin<3
     % default values

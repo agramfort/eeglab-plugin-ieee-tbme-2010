@@ -5,10 +5,6 @@ function [Gnormalized] = normalize_rows(G)
 %   Created by Alexandre Gramfort on 2008-06-30.
 %   Copyright (c) 2007 Alexandre Gramfort. All rights reserved.
 
-% $Id: normalize_rows.m 2 2009-06-16 19:24:10Z gramfort $
-% $LastChangedBy: gramfort $
-% $LastChangedDate: 2009-06-16 15:24:10 -0400 (Mar, 16 jui 2009) $
-% $Revision: 2 $
 
 me = 'NORMALIZE_ROWS';
 

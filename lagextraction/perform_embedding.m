@@ -8,10 +8,6 @@ function [order,coords,points] = perform_embedding(points,options)
 %       [ORDER,COORDS,POINTS] = PERFORM_EMBEDDING(POINTS,OPTIONS)
 %
 
-% $Id: perform_embedding.m 4 2009-08-15 21:10:35Z gramfort $
-% $LastChangedBy: gramfort $
-% $LastChangedDate: 2009-08-15 17:10:35 -0400 (Sam, 15 aoû 2009) $
-% $Revision: 4 $
 
 if options.disp_log
     disp('---- Running spectral embedding');

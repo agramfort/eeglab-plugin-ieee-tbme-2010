@@ -11,10 +11,6 @@ function [lags,use_ascend,dc,sc,E] = gc_lags(points,options)
 %   SC is the smoothness cost
 %
 
-% $Id: gc_lags.m 4 2009-08-15 21:10:35Z gramfort $
-% $LastChangedBy: gramfort $
-% $LastChangedDate: 2009-08-15 17:10:35 -0400 (Sam, 15 aoû 2009) $
-% $Revision: 4 $
 
 if nargin<2
     options.null = 0;

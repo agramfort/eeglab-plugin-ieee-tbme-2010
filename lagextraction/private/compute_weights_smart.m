@@ -8,10 +8,6 @@ function weights = get_weights_smart(distances,ratio)
 % year = {2004},
 % }
 
-% $Id: compute_weights_smart.m 2 2009-06-16 19:24:10Z gramfort $
-% $LastChangedBy: gramfort $
-% $LastChangedDate: 2009-06-16 15:24:10 -0400 (Mar, 16 jui 2009) $
-% $Revision: 2 $
 
 [N,M] = size(distances);
 sigmas = zeros(1,N);

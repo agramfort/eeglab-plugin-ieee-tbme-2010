@@ -8,10 +8,6 @@ function [lags,use_ascend,E] = perform_extraction(points_ordered,options)
 %       [LAGS,USE_ASCEND,E] = PERFORM_EXTRACTION(POINTS_ORDERED,OPTIONS)
 %
 
-% $Id: perform_extraction.m 4 2009-08-15 21:10:35Z gramfort $
-% $LastChangedBy: gramfort $
-% $LastChangedDate: 2009-08-15 17:10:35 -0400 (Sam, 15 aoû 2009) $
-% $Revision: 4 $
 
 if nargin<3
     options.null = 0;
