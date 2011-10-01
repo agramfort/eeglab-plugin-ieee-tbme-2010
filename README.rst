@@ -3,13 +3,12 @@ Lag Extraction EEGLAB plugin
 
 Copyright (c) 2008-2011 Alexandre Gramfort
 
-This code implements the method detailed in this paper
+This code implements the method detailed in this paper::
 
-Graph-based variability estimation in single-trial event-related neural responses.
-Gramfort A, Keriven R, Clerc M.
-IEEE Trans Biomed Eng. 2010 May;57(5):1051-61. Epub 2010 Feb 5.
-
-http://www.ncbi.nlm.nih.gov/pubmed/20142163
+    Graph-based variability estimation in single-trial event-related neural responses.
+    Gramfort A, Keriven R, Clerc M.
+    IEEE Trans Biomed Eng. 2010 May;57(5):1051-61. Epub 2010 Feb 5.
+    http://www.ncbi.nlm.nih.gov/pubmed/20142163
 
 Notes
 -----
