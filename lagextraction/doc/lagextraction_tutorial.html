@@ -1,0 +1,269 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>Lag extraction tutorial script</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011-10-01">
+      <meta name="m-file" content="lagextraction_tutorial">
+      <LINK REL="stylesheet" HREF="style.css" TYPE="text/css">
+   </head>
+   <body>
+      <div class="content">
+         <h1>Lag extraction tutorial script</h1>
+         <introduction>
+            <p>this script runs an EEGLAB plugin used for lag extraction on single trial data.</p>
+            <p>$Id: lagextraction_tutorial.m 4 2009-08-15 21:10:35Z gramfort $</p>
+         </introduction>
+         <h2>Contents</h2>
+         <div>
+            <ul>
+               <li><a href="#1">Load data</a></li>
+               <li><a href="#2">Set parameters and run lag extraction</a></li>
+               <li><a href="#3">View ERP image reordered</a></li>
+               <li><a href="#4">Re-epoch the data</a></li>
+               <li><a href="#5">View ERP image of re-epoched data</a></li>
+            </ul>
+         </div>
+         <h2>Load data<a name="1"></a></h2><pre class="codeinput">load(<span class="string">'data/oddball3-num1-512Hz-chan10.set'</span>,<span class="string">'-mat'</span>);
+</pre><h2>Set parameters and run lag extraction<a name="2"></a></h2><pre class="codeinput">use_ica = false; <span class="comment">% Set to true, if you want to realign based on an ICA component</span>
+channel = 1; <span class="comment">% Index of channel or ICA component used for realignment</span>
+time_win = [150 500]; <span class="comment">% (ms) : work on this time window</span>
+bad_trials = []; <span class="comment">% set bad trials</span>
+
+clear <span class="string">options</span>
+options.sigma = [0.01:0.01:0.2];
+options.alpha = [0.001,0.01,0.1];
+options.disp_log = false;
+[EEG, com, order, lags, event_type, E_lags] = pop_extractlag( EEG , use_ica, channel, time_win, options);
+</pre><pre class="codeoutput">--- Running K Cross Validation (K = 10)
+- Running lag extraction
+--- Nb trials : 205
+--- Nb time samples : 89
+---------- Using sigma = 0.06
+- Running lag extraction
+--- Nb trials : 205
+--- Nb time samples : 89
+---------- Using sigma = 0.06
+- Running lag extraction
+--- Nb trials : 205
+--- Nb time samples : 89
+---------- Using sigma = 0.06
+- Running lag extraction
+--- Nb trials : 205
+--- Nb time samples : 89
+---------- Using sigma = 0.06
+- Running lag extraction
+--- Nb trials : 205
+--- Nb time samples : 89
+---------- Using sigma = 0.06
+- Running lag extraction
+--- Nb trials : 205
+--- Nb time samples : 89
+---------- Using sigma = 0.06
+- Running lag extraction
+--- Nb trials : 205
+--- Nb time samples : 89
+---------- Using sigma = 0.06
+- Running lag extraction
+--- Nb trials : 205
+--- Nb time samples : 89
+---------- Using sigma = 0.06
+- Running lag extraction
+--- Nb trials : 205
+--- Nb time samples : 89
+---------- Using sigma = 0.06
+- Running lag extraction
+--- Nb trials : 205
+--- Nb time samples : 89
+---------- Using sigma = 0.06
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 204
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+- Running lag extraction
+--- Nb trials : 228
+--- Nb time samples : 89
+---------- Using sigma = 0.05
+---------- Using alpha = 0.01
+eeg_checkset: recomputing the ICA activation matrix ...
+</pre><div class="div-img"><img vspace="5" hspace="5" src="lagextraction_tutorial_01.png"> </div>
+         <div class="div-img"><img vspace="5" hspace="5" src="lagextraction_tutorial_02.png"> </div>
+         <div class="div-img"><img vspace="5" hspace="5" src="lagextraction_tutorial_03.png"> </div>
+         <div class="div-img"><img vspace="5" hspace="5" src="lagextraction_tutorial_04.png"> </div>
+         <div class="div-img"><img vspace="5" hspace="5" src="lagextraction_tutorial_05.png"> </div>
+         <div class="div-img"><img vspace="5" hspace="5" src="lagextraction_tutorial_06.png"> </div>
+         <div class="div-img"><img vspace="5" hspace="5" src="lagextraction_tutorial_07.png"> </div>
+         <div class="div-img"><img vspace="5" hspace="5" src="lagextraction_tutorial_08.png"> </div>
+         <h2>View ERP image reordered<a name="3"></a></h2><pre class="codeinput">figure;
+pop_erpimage(EEG,1, [channel],[],EEG.chanlocs(channel).labels,1,1,{ event_type }, <span class="keyword">...</span>
+             [],<span class="string">'latency'</span> ,<span class="string">'yerplabel'</span>,<span class="string">'\muV'</span>,<span class="string">'erp'</span>,<span class="string">'cbar'</span>);
+</pre><pre class="codeoutput">Command executed by pop_erpimage:
+ 
+ erpimage( mean(EEG.data([1], :),1), eeg_getepochevent( EEG, { 'Cz (1) : 150 - 500 ms (max)'},[], 'latency'), linspace(EEG.xmin*1000, EEG.xmax*1000, EEG.pnts), 'Cz', 1, 1 , 'yerplabel', '\muV', 'erp', 'cbar');
+ 
+Plotting input data as 228 epochs of 256 frames sampled at 256.0 Hz.
+Sorting data on input sortvar.
+The caxis range will be the sym. abs. data range -&gt; [-27.6138,27.6138].
+Data will be plotted between -199.219 and 796.875 ms.
+Overplotting sorted sortvar on data.
+Plotting the ERP trace below the ERP image
+Done.
+
+</pre><div class="div-img"><img vspace="5" hspace="5" src="lagextraction_tutorial_09.png"> </div>
+         <h2>Re-epoch the data<a name="4"></a></h2><pre class="codeinput">EEG = pop_epoch( EEG, {event_type}, [-0.4 0.3]);
+</pre><pre class="codeoutput">pop_epoch():228 epochs selected
+Epoching...
+Warning: event 1 out of data boundary
+Warning: event 45 out of data boundary
+Warning: event 58 out of data boundary
+Warning: event 60 out of data boundary
+Warning: event 66 out of data boundary
+Warning: event 73 out of data boundary
+Warning: event 105 out of data boundary
+Warning: event 134 out of data boundary
+Warning: event 214 out of data boundary
+Warning: event 223 out of data boundary
+pop_epoch():218 epochs generated
+pop_epoch(): time limits have been adjusted to [-0.398 0.301] to fit data points limits
+eeg_checkset: recomputing the ICA activation matrix ...
+pop_epoch(): checking epochs for data discontinuity
+</pre><h2>View ERP image of re-epoched data<a name="5"></a></h2><pre class="codeinput">figure;
+pop_erpimage(EEG,1, [channel],[],EEG.chanlocs(channel).labels,1,1,{},[],<span class="string">''</span>,<span class="string">'yerplabel'</span>,<span class="string">'\muV'</span>,<span class="string">'erp'</span>,<span class="string">'cbar'</span>);
+</pre><pre class="codeoutput">Command executed by pop_erpimage:
+ 
+ erpimage( mean(EEG.data([1], :),1), ones(1, EEG.trials)*EEG.xmax*1000, linspace(EEG.xmin*1000, EEG.xmax*1000, EEG.pnts), 'Cz', 1, 1 , 'yerplabel', '\muV', 'erp', 'cbar');
+ 
+Plotting input data as 218 epochs of 179 frames sampled at 256.0 Hz.
+Sorting data on input sortvar.
+The caxis range will be the sym. abs. data range -&gt; [-23.4057,23.4057].
+Data will be plotted between -398.438 and 296.875 ms.
+Overplotting sorted sortvar on data.
+Plotting the ERP trace below the ERP image
+Done.
+
+</pre><div class="div-img"><img vspace="5" hspace="5" src="lagextraction_tutorial_10.png"> </div>
+         <p class="footer"><br>
+            see COPYING for license<br>
+            Copyright  &reg; 2009 Alexandre Gramfort<br></p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%% Lag extraction tutorial script
+% this script runs an EEGLAB plugin used for lag extraction on single trial data.
+%
+% $Id: lagextraction_tutorial.m 4 2009-08-15 21:10:35Z gramfort $
+
+%% Load data
+load('data/oddball3-num1-512Hz-chan10.set','-mat');
+
+%% Set parameters and run lag extraction
+use_ica = false; % Set to true, if you want to realign based on an ICA component
+channel = 1; % Index of channel or ICA component used for realignment
+time_win = [150 500]; % (ms) : work on this time window
+bad_trials = []; % set bad trials
+
+clear options
+options.sigma = [0.01:0.01:0.2];
+options.alpha = [0.001,0.01,0.1];
+options.disp_log = false;
+[EEG, com, order, lags, event_type, E_lags] = pop_extractlag( EEG , use_ica, channel, time_win, options);
+
+%% View ERP image reordered
+figure;
+pop_erpimage(EEG,1, [channel],[],EEG.chanlocs(channel).labels,1,1,{ event_type }, ...
+             [],'latency' ,'yerplabel','\muV','erp','cbar');
+
+%% Re-epoch the data
+EEG = pop_epoch( EEG, {event_type}, [-0.4 0.3]);
+
+%% View ERP image of re-epoched data
+figure;
+pop_erpimage(EEG,1, [channel],[],EEG.chanlocs(channel).labels,1,1,{},[],'','yerplabel','\muV','erp','cbar');
+##### SOURCE END #####
+-->
+   </body>
+</html>
