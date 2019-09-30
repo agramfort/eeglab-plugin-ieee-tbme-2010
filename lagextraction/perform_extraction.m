@@ -40,7 +40,6 @@ if options.disp_log
     disp('---- Running lag extraction');
 end
 
-%[lags,use_ascend,dc,sc,E] = gc_lags(points_ordered,options);
 [lags,use_ascend,dc,sc,E] = gc_lags(data_smooth,options);
 
 if options.disp_log
