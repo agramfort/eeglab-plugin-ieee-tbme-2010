@@ -31,7 +31,7 @@ end
 %%%%%%%% END OPTIONS %%%%%%%%%
 
 if xwin>0
-    data_smooth = movav(points_ordered',[],2*xwin,1)'; % smoothing for better robustness
+    data_smooth = movav(points_ordered,[],2*xwin,1); % smoothing for better robustness
 else
     data_smooth = points_ordered;
 end
@@ -40,7 +40,8 @@ if options.disp_log
     disp('---- Running lag extraction');
 end
 
-[lags,use_ascend,dc,sc,E] = gc_lags(points_ordered,options);
+%[lags,use_ascend,dc,sc,E] = gc_lags(points_ordered,options);
+[lags,use_ascend,dc,sc,E] = gc_lags(data_smooth,options);
 
 if options.disp_log
     disp('-- Lag extraction done !');
